@@ -1,4 +1,7 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Notification Widget
+
+## Overview
+This Notification Widget is a powerful, flexible component for displaying notifications in your application. It's built using the **Composition Pattern**, a design pattern that allows you to compose objects into tree structures to represent part-whole hierarchies.
 
 ## Getting Started
 
@@ -16,21 +19,28 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Setup
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+To use the Notification Widget in your application, import the components you need from the Notification component.
 
-## Learn More
+```jsx
+import { Notification } from "./Notification";
+```
 
-To learn more about Next.js, take a look at the following resources:
+You can then use these components in your application like so:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```jsx
+<Notification.Root>
+    <Notification.Icon icon={Rocket} />
+    <Notification.Content text="Você recebeu um convite para participar de um grupo" />
+    <Notification.Actions>
+        <Notification.Action icon={X} />
+        <Notification.Action
+        icon={Check}
+        className="bg-violet-500 hover:bg-violet-600 dark:bg-violet-500 dark:hover:bg-violet-600"
+        />
+    </Notification.Actions>
+</Notification.Root>
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Each component can be used independently or composed together to create more complex notifications.
