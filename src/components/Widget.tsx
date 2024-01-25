@@ -1,4 +1,4 @@
-import { Rocket } from "lucide-react";
+import { Check, Rocket, X } from "lucide-react";
 import { Notification } from "./Notification";
 
 export function Widget() {
@@ -20,7 +20,10 @@ export function Widget() {
           <Notification.Root>
             <Notification.Icon icon={Rocket} />
             <Notification.Content text="Você recebeu um convite para participar de um grupo" />
-            <Notification.Actions />
+            <Notification.Actions>
+              <Notification.Action icon={X} />
+              <Notification.Action icon={Check} />
+            </Notification.Actions>
           </Notification.Root>
         </div>
       </div>
